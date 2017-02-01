@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Labbook Example</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .scrollable-menu {
+            height: auto;
+            max-height: 200px;
+            overflow-x: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="http://www.larson-tech.com/CS560/">Class's website</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="project1.html">Project 1</a>
+                    </li>
+                    <li>
+                        <a href="project2.html">Project 2</a>
+                    </li>
+                    <li>
+                        <a href="project3.html">Project 3</a>
+                    </li>
+                    <li>
+                        <a href="example.html">Example</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Project Example</h1>
+                        <hr class="small">
+                        <span class="subheading"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			            <div class="col-lg-12">
+
+			                <ul id="myTab" class="nav nav-tabs nav-justified">
+			                    <li class="active"><a href="#sleep-example" data-toggle="tab"><i class="glyphicon glyphicon-bed"></i> Sleeping </a>
+			                    </li>
+			                    <li class=""><a href="#drink-example" data-toggle="tab"><i class="glyphicon glyphicon-glass"></i> Drinking Water</a>
+			                    </li>
+                                <li class=""><a href="#activities-example" data-toggle="tab"><i class="glyphicon glyphicon-asterisk"></i> Activities</a>
+                                </li>
+			                </ul>
+
+			                <div id="myTabContent" class="tab-content">
+			                    <div class="tab-pane fade active in" id="sleep-example" style="margin-top: 5%;">
+                                    <div class="row">
+                                        <div class="col-lg-8 col-lg-offset-2">
+                                            <h4> Please enter the information of your sleep</h4>
+                                            <div class="input-group text-align:center">
+                                              <input id="bedtimeInput" class="form-control" placeholder="Bed time" type='text'>
+                                              <input id="wakeupInput" type="text" class="form-control" placeholder="Wakeup time">
+                                              <input type="text" class="form-control" placeholder="Date" id="datepicker1">
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-primary" type="button" style="margin-top: 2%;" onclick="valid()">Done</button>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                    </div>
+                                    <div class="col-lg-8 col-lg-offset-2">
+                                        <p id="sleepTimeResult" style="display:none;"></p>
+                                    </div>
+
+			                    </div>
+			                      
+
+			                    <div class="tab-pane fade" id="drink-example" style="margin-top: 5%;">
+                                    <div class="row">
+                                        <div class="col-lg-8 col-lg-offset-2">
+                                            <h4> Please enter the information of drinking water</h4>
+                                            <div class="input-group text-align:center">
+                                              <input id="amountWater" type="text" class="form-control" placeholder="Glasses of water">
+                  
+                                              <input type="text" class="form-control" placeholder="Date" id="datepicker2">
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-success" type="button" style="margin-top: 2%;" onclick="validateWater()">Done</button>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                    </div>
+   			                    </div>
+                                <div class="tab-pane fade" id="activities-example" style="margin-top: 5%;">
+                                    <div class="row">
+                                       <div class="col-lg-8 col-lg-offset-2">
+                                            <div id="dropSection" style="display: block;" class="btn-group" data-toggle="buttons">
+                                                <div class="btn-group">
+                                                    <label id="drop1" class="dropdown dropdown-toggle" data-toggle="dropdown" class="dropdown-toggle" data-toggle="dropdown">
+                                                        <span id="text"> Choose an activity </span><span class="caret"></span>
+                                                    </label>
+                                                      <ul class="dropdown-menu scrollable-menu" id="divNewNotifications" role="menu">
+                                                        <li><a>Squat</a></li>
+                                                        <li><a>Leg press</a></li>
+                                                        <li><a>Lunge</a></li>
+                                                        <li><a>Deadlift</a></li>
+                                                        <li><a>Leg extension</a></li>
+                                                        <li><a>Leg curl</a></li>
+                                                        <li><a>Standing calf raise</a></li>
+                                                        <li><a>Seated calf raise</a></li>
+                                                        <li><a>Hip adductor</a></li>
+                                                        <li><a>Bench press</a></li>
+                                                        <li><a>Chest fly</a></li>
+                                                        <li><a>Push-up</a></li>
+                                                        <li><a>Pulldown</a></li>
+                                                        <li><a>Pull-up</a></li>
+                                                    </ul>
+                                                </div> 
+                                                <input type="text" class="form-control" placeholder="Minutes" id="minActivity">
+                                                <button class="btn btn-primary" type="button" style="margin-top: 2%;" onclick="validateMinutes()">
+                                                    Add
+                                                </button>
+                                            </div>
+                                            <br>
+                                            </div>
+                                        </div>
+                                            <div class="col-lg-8 col-lg-offset-2" style="margin-top: 2%;">
+                                                <a id="button" onclick="showHideDiv('item');showHideDiv('dropSection');">
+                                                 Add a new activity
+                                                 </a>
+                                                    <div id="item" style="display: none;">
+                                                         <div class="input-group text-align:center">
+                                                            <input id="newActivityInput" type="text" class="form-control" placeholder="New Activity">
+                                                            <input id="caloriesInput" type="text" class="form-control" placeholder="Calories per hour">
+                                                            <button class="btn btn-primary" type="button" style="margin-top: 2%;" onclick="validateCreateActivity()">Create Activity</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+
+
+
+			                 </div>
+			        </div>
+			    </div>
+            </div>
+
+
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Our Website 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker1" ).datepicker();
+        } );
+        $( function() {
+            $( "#datepicker2" ).datepicker();
+        } );
+        function showHideDiv(id) {
+            var e = document.getElementById(id);
+            if(e.style.display == null || e.style.display == "none") {
+                e.style.display = "block";
+            } else {
+                e.style.display = "none";
+            }
+        }
+        function clearInput(id){
+            var e = document.getElementById(id).value = "";
+        }
+        function validateTime(a) {
+            re = /^\d{1,2}:\d{2}([ap]m)?$/;
+            if(a != "" && a.match(re))
+                return true;
+        }
+        function msToTime(s) {
+          var ms = s % 1000;
+          s = (s - ms) / 1000;
+          var secs = s % 60;
+          s = (s - secs) / 60;
+          var mins = s % 60;
+          var hrs = (s - mins) / 60;
+
+          return hrs + ':' + mins;
+        }
+        function valid() {
+            var wakeup = document.getElementById("wakeupInput").value;
+            var sleep = document.getElementById("bedtimeInput").value;
+            if(validateTime(wakeup) && validateTime(sleep))
+            {
+                clearInput('bedtimeInput');
+                clearInput('wakeupInput');
+                clearInput('datepicker1');
+                wakeupHour = wakeup.substr(0,wakeup.indexOf(':'));
+                wakeupMin = wakeup.substr(wakeup.indexOf(':')+1);
+                sleepHour = sleep.substr(0,wakeup.indexOf(':'));
+                sleepMin = sleep.substr(wakeup.indexOf(':')+1);
+                wakeup = new Date('1','1','1999',wakeupHour,wakeupMin);
+                sleep = new Date('1','1','1999',sleepHour,sleepMin);
+                sleepTime = msToTime(wakeup-sleep);
+                if(sleepTime[0] == '-')
+                {
+                    alert("Wakeup time is smaller than bedtime?");
+                    return;
+                }
+                var result = "Your sleeping time is " + sleepTime + " hour(s).";
+                alert(result);
+                // document.getElementById("sleepTimeResult").innerHTML = result;
+                showHideDiv("sleepTimeResult");
+            }
+            else {
+                if(!validateTime(wakeup))
+                {
+                    clearInput('wakeupInput');
+                    alert('Wakeup time is not valid. It should be hh:mm!');
+                } 
+                else {
+                    clearInput('bedtimeInput');
+                    alert('Bed time is not valid. It should be hh:mm!');
+                }       
+            }
+        }
+        function validateWater()
+        {
+            var water = document.getElementById("amountWater").value;
+            if(isNaN(water) || water == "")
+            {
+                alert("Number of glasses of water is not valid!");
+                clearInput('amountWater');
+                clearInput('datepicker2');
+                return;
+            }
+            else{
+                clearInput('amountWater');
+                clearInput('datepicker2');
+                var result = "You have " + water + " glasses of water!";
+                alert(result);
+            }
+            
+        }
+        function validateMinutes()
+        {
+            var minActivity = document.getElementById("minActivity").value;
+            if(isNaN(minActivity) || minActivity == "")
+            {
+                alert("Minutes is not valid!");
+                clearInput('minActivity');
+                return;
+            }
+            else{
+                clearInput('minActivity');
+                var result = "You burned out " + minActivity*(Math.floor(Math.random() * 6 + 1)) + " calories!";
+                alert(result);
+                location.reload(); 
+            }
+            
+        }
+        function validateCreateActivity()
+        {
+            var caloriesInput = document.getElementById("caloriesInput").value;
+            if(isNaN(caloriesInput) || caloriesInput == "")
+            {
+                alert("Calories entered is not valid!");
+                clearInput('caloriesInput');
+                return;
+            }
+            else{
+                clearInput('newActivityInput');
+                clearInput('caloriesInput');
+                alert('You just added a new activity!');
+                location.reload();    
+            }
+            
+        }
+        $('.dropdown-toggle').dropdown();
+            $('#divNewNotifications li > a').click(function(){
+            if (this.text !== ' More Options ')
+                $('#text').text($(this).html());
+            });
+    </script>
+</body>
+
+</html>

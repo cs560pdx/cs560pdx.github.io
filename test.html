@@ -1,0 +1,34 @@
+ 
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ 
+<div class="btn-group" data-toggle="buttons">
+
+    <div class="btn-group">
+        <label class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+            <span id="text"> More Options </span><span class="caret"></span>
+        </label>
+        <ul class="dropdown-menu" id="divNewNotifications">
+            <li><a class="my_data_flag" id="three"> THREE </a></li>
+            <li><a class="my_data_flag" id="four"> FOUR </a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- the following only works if after the above html -->
+<script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- the following only works if after the above html -->
+<script>
+    $('.dropdown-toggle').dropdown();
+    $('#divNewNotifications li > a').click(function(){
+    if (this.text !== ' More Options ')
+        $('#text').text($(this).html());
+    });
+</script>
